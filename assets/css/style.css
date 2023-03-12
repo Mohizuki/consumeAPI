@@ -772,10 +772,23 @@ section {
 .barcat{
   text-decoration: none;
   color: var(--color-2);
+  transition: 0.5s;
 }
 .barcat:hover{
   color: var(--color-2);
+  /* outline:5px solid black; */
 }
+
+.catcat{
+  transition: 0.5s;
+  border:2px solid transparent;
+  border-width: 0px 2px;
+}
+.catcat:hover{
+  border:2px solid red;
+  border-width: 0px 2px;
+}
+
 .judulcat{
   background-color: var(--color-1);
   transition: 0.5s;
@@ -794,5 +807,6 @@ section {
   background-color: transparent;
   font-size: 30px;
   text-shadow: 2px 2px 3px white;
+  border:1px 1px solid red;
   /* position: relative; */
 }
