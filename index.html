@@ -50,6 +50,7 @@
                   <input type="text" name="text" placeholder="Search Food" id="searchRecipe"><a class="scrollto btnSearchRecipe" href="#mealCardsSection" title="Search">Search Recipe</a>
                 </form>
               </div>
+              <a class="button btnRandomRecipe" href="#random" title="Show a random recipe" onclick="clear()">Random Recipe</a>
             </div>
             <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
             <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
@@ -124,6 +125,30 @@
           <div class="row mealCards d-flex"><div class="loader"></div></div>
       </div>
     </section>
+    <section id="random">
+      <br/>
+      <div class="container">
+        <div class="row">
+            <div class="four columns">
+              <h3 class="heading" id="dynamicTitle">The Random Recipe</h3> <br/>
+            </div>
+            <div class="eight columns" style="text-align:right;">
+              <br/>
+              <a id="searchAgainBtn" class="button btnRandomRecipe" href="#landing" title="Searh again" style="margin-right:10px">Search again</a>
+
+              <img src="images/chef.svg" class="u-max-full-width chefimg" alt="Chef icon" />
+              <button id="dynamicButton" class="button btnRandomRecipe" title="Show another random recipe">Randomize</button>
+            </div> 
+        </div>
+        <div class="row">
+          <div class="four columns mealImg" id="randomMealImg"><div class="loader"></div></div>
+          <div class="eight columns mealMetadata" id=randomMealMetadata></div>
+        </div>
+        <div class="row">
+          <div class="twelve columns mealInstructions" id="randomMealInstructions"></div>
+        </div>
+      </div>
+    </section>
 
     <!-- <section id="hasilcari" class="d-flex">
       <div class="container">
@@ -144,19 +169,18 @@
             <img src="assets/img/chef.png" class="img-fluid w-50 h-auto" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
+            <h3>Experiencing many recipes and ideas with Cooking Mama</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              Cooking Mama has many good recipes. Besides that, there are also benefits of Cooking Mama, such as :
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda</li>
+              <li><i class="bi bi-check-circle"></i> The ideas are provided by many talented chef</li>
+              <li><i class="bi bi-check-circle"></i> Recipe websites often offer a wide variety of recipes to choose from, so you can find something to suit your tastes and dietary preferences.</li>
+              <li><i class="bi bi-check-circle"></i> They usually provide detailed instructions and ingredient lists, making it easier to follow along and ensure that you have everything you need.</li>
+              <li><i class="bi bi-check-circle"></i> Recipe websites can be a great source of inspiration for meal planning and can help you come up with new ideas for dishes to try.</li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
+              May this website provide you with anything that need <3
             </p>
           </div>
         </div>
@@ -174,7 +198,7 @@
         <div class="row  justify-content-center">
           <div class="col-lg-6">
             <h3>Cooking Mama</h3>
-            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+            <p>Join our community of foodies and become part of the culinary adventure with our recipe website that serves up a feast of inspiration and flavor in every click.</p>
           </div>
         </div>
 
