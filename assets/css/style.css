@@ -26,6 +26,11 @@ h6 {
   font-size: 15px;
   text-align: justify;
 }
+.limittext2 {
+  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+  font-size: 15px;
+  text-align: justify;
+}
 .title {
   margin: 2rem 0;
 }
@@ -705,7 +710,7 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #16df7e;
+  background: var(--color-3);
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
@@ -736,7 +741,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #16df7e;
+  background: var(--color-3);
   color: #fff;
   text-decoration: none;
 }
@@ -785,12 +790,12 @@ section {
   border-width: 0px 2px;
 }
 .catcat:hover{
-  border:2px solid red;
+  border:2px solid var(--color-3);
   border-width: 0px 2px;
 }
 
 .judulcat{
-  background-color: var(--color-1);
+  background-color: var(--color-3);
   transition: 0.5s;
   width: auto;
   color: #fff;
@@ -798,15 +803,43 @@ section {
   font-size: 20px;
   margin-top: 1%;
   padding: 0.5%;
+  z-index: 1;
 }
 .barcat:hover .judulcat{
   margin-top: 0%;
   padding: 0%;
   width: auto;
-  color: var(--color-1);
+  color: var(--color-3);
   background-color: transparent;
   font-size: 30px;
-  text-shadow: 2px 2px 3px white;
+  text-shadow: 1px 1px 1px #fff;
   border:1px 1px solid red;
   /* position: relative; */
+}
+.tumbcat {
+  transition: 0.5s;
+}
+.tumbcat:hover{
+  opacity: 60%;
+}
+
+
+/* hasil search */
+.mealCardRecipeBtn {
+  text-decoration: none;
+  color: #fff;
+  background: var(--color-3);
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: .75rem 0;
+  display: block;
+  width: 175px;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  transition: all .4s linear;
+  border: 0px;
+}
+
+.mealCardRecipeBtn:hover {
+  background: var(--color-1);
 }

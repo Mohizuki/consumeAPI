@@ -250,8 +250,9 @@ function fetchMeal(type){
               $('#userInput').text(user_search_term);
               setCache(res.meals, type);
           } else {
+              $("#errorMessageContainer").remove();
               $("#mealCardsSection .container").hide();
-              $("#mealCardsSection").prepend("<div id='errorMessageContainer' style='display:flex;'> <p id='errorMessageText'>No recipes match the search term '" + user_search_term + "'</p> <a id='errorMessageBtn' class='button' href='#landing' title='Search again' >Search again</a> </div>")
+              $("#mealCardsSection").prepend("<div id='errorMessageContainer' style='display:flex;'> <p id='errorMessageText'>No recipes match the search term '" + user_search_term + "'</p> <a id='errorMessageBtn' class='button' href='#hero' title='Search again' >Search again</a> </div>")
           }   
       })
       .catch( e => console.warn(e) );
@@ -299,7 +300,7 @@ const getData = (types) => {
           let mealData = JSON.parse(sessionStorage.getItem(type));
           if( mealData !== null ) {
               createMealCards(mealData);      
-              window.scrollTo(0,$('#mealCardsSection').offset().top);
+              window.scrollTo(0,$('#hero').offset().top);
               $('#userInput').text(sessionStorage.getItem("search"));
           }
       }
@@ -406,13 +407,13 @@ const createMealCards = meals => {
       mealData = JSON.stringify(meal);
       mealData = mealData.replace(/(['])/g, "&rsquo;");
       mealCards += 
-      `<div class="four columns col-lg-4 col-md-6 mt-5 catcat shadow-sm"><div class="card">
+      `<div class="four columns col-lg-3 col-md-3 mt-5 catcat shadow-sm rounded-3 card">
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}" title="${meal.strMeal}" class="u-max-full-width" />
           <div class="card-body icon-box row justify-content-center mx-2"">
-              <div class="cardTitle text-center">${meal.strMeal}</div>
+              <div class="cardTitle text-center limittext2">${meal.strMeal}</div>
               <button class="button mealCardRecipeBtn" data-meal='${mealData}'>Recipe</button>
-          </div>
-      </div></div>`;
+              </div>
+      </div>`;
       // `
       //         <div class="col-lg-4 col-md-6 mt-5 catcat shadow-sm">
       //           <a href="#" class="barcat" onclick="fetchCategoryMeal('${meal.strCategory}')" href="#mealCardsSection">
