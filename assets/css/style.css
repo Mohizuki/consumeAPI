@@ -473,7 +473,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 20px 0;
   overflow: hidden;
 }
 
@@ -860,5 +860,5 @@ section {
 }
 #random .bi h1{
   margin:0 7%;
-  font-size: larger;
+  font-size: 15px;
 }
