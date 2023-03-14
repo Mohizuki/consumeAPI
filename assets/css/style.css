@@ -288,7 +288,7 @@ h6 {
   font-size: 20px;
   font-weight: 300;
   align-self: center;
-  margin-right: 10%;
+  margin: 3%;
 }
 /* 
 #hero .btn-get-started {
@@ -335,7 +335,7 @@ h6 {
   color: var(--color-3);
 }
 
-#hero .footer-newsletter form {
+#hero .centering {
   background: #fff;
   padding: 6px 10px;
   position: relative;
@@ -345,10 +345,11 @@ h6 {
   justify-self: center;
 }
 
-#hero .footer-newsletter form input[type=text] {
-  border: 0;
+#hero .footer-newsletter input[type=text]{
   padding: 4px 8px;
   max-width: 100%;
+  outline: none;
+  border: 0;
 }
 
 #hero .btnSearchRecipe {
@@ -375,7 +376,6 @@ h6 {
 }
 
 #hero .randombtn {
-  margin-left: 5%;
   top: -1px;
   right: -1px;
   bottom: -1px;
@@ -386,10 +386,11 @@ h6 {
   color: #fff;
   transition: 0.3s;
   border-radius: 4px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 10px;
+  padding: 4px 8px;
 }
 
 #hero .randombtn:hover {
@@ -436,8 +437,14 @@ h6 {
     width: 70%;
   }
   #hero .btn-watch-video {
-    display: inline-flex;
+    display: none;
   }
+  #hero .randombtn {
+    margin-left: 0px !important;
+  }
+  /* .centering {
+    display: inline grid;
+  } */
 }
 
 @media (max-width: 575px) {

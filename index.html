@@ -44,19 +44,16 @@
           <h1>Whip up something delicious with every click</h1>
           <h2>where you can find a wide variety of delicious and easy-to-follow recipes that will tantalize your taste buds and inspire your inner chef. Whether you're a seasoned cook or just starting out in the kitchen, our collection of recipes has something for everyone. </h2>
           <div class="d-flex">
-            <div class="row footer-newsletter">
-              <div class="col-lg-6 w-auto">
-                <form action="" method="post">
-                  <input type="text" name="text" placeholder="Search Food" id="searchRecipe"><a class="scrollto btnSearchRecipe" href="#mealCardsSection" title="Search">Search</a>
-                </form>
+            <div class="footer-newsletter d-flex randomsec">
+              <div class="col-lg-6 w-auto centering">
+                  <input class="u-full-width" type="text" placeholder="Search recipes" id="searchRecipe" /><a class="scrollto btnSearchRecipe" href="#mealCardsSection" title="Search">Search</a>
               </div>
-              <div class="d-flex randomsec">
                 <h3>or</h3>
                 <a class="button btnRandomRecipe randombtn" href="#random" title="Show a random recipe" onclick="clear()">Random</a>
-              </div>
+
             </div>
             <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -110,14 +107,14 @@
       <br/>
       <div class="container" style="display:none;">
           <div class="row">
-              <div class="four columns text-center">
-                <h1 class="title">The Recipes You Wanted</h1> <br/>
+              <div class="text-center">
+                <h1 class="title">The Recipes You're Looking for!</h1> <br/>
               </div>
               <div class="row">
                 <div class="eight columns">
                   <div class="row">
                     <div class="eight columns" style="text-align:center;font-size:20px">
-                      <p>You searched for: <span id="userInput"></span></p>
+                      <p>You searched for: "<span id="userInput"></span>"</p>
                     </div>
                     <div class="four columns" style="text-align:right">
                       <a href="#hero" class="button scrollto searchagain">Search again?</a>
@@ -133,37 +130,27 @@
       <br/>
       <div class="container">
         <div class="row">
-            <div class="four columns text-center">
-              <h3 class="heading" id="dynamicTitle">The Random Recipe</h3> <br/>
+            <div class="text-center">
+              <h3 class="heading" id="dynamicTitle">The Random Recipe</h3>
+              <p><span>Generate random recipes</span></p>
             </div>
-            <div class="eight columns d-flex justify-content-center mb-4">
+            <div class="d-flex justify-content-center mb-4">
               <br/>
               <a class="button scrollto searchagain" href="#hero" style="margin-right:10px">Search again</a>
-              <!-- <button id="searchAgainBtn" class="button btnRandomRecipe searchagain" href="#landing" title="Search again" style="margin-right:10px">Search again</button> -->
               <button id="dynamicButton" class="button btnRandomRecipe searchagain" title="Show another random recipe">Randomize</button>
             </div> 
         </div>
         <div class="row">
-          <div class="four columns mealImg" id="randomMealImg"><div class="loader"></div></div>
-          <div class="eight columns mealMetadata" id=randomMealMetadata></div>
+          <div class="mealImg hero-img" id="randomMealImg"><div class="loader"></div></div>
+          <div class="mealMetadata" id=randomMealMetadata></div>
         </div>
         <div class="row">
-          <div class="twelve columns mealInstructions" id="randomMealInstructions"></div>
+          <div class="mealInstructions" id="randomMealInstructions"></div>
         </div>
       </div>
     </section>
 
-    <!-- <section id="hasilcari" class="d-flex">
-      <div class="container">
-        <div class="eight columns" style="text-align:center;font-size:20px">
-          <p>You searched for: <span id="#mealCardsSection"></span></p>
-        </div>
-        <div class="four columns" style="text-align:right">
-          <a href="#landing" class="button">Search again?</a>
-        </div>
-      </div>
-    </section> -->
-    <!-- ======= About Section ======= -->
+
     <section id="about" class="about">
       <div class="container">
 

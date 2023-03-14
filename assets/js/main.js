@@ -382,7 +382,7 @@ const createMeal = (meal,type) => {
 
 // Sets random meal's thumbnail image
 const setMealThumbnail = (meal,type) => {
-  let imgSrc = `<img src="${meal.strMealThumb}" alt="${meal.strMeal}" title="${meal.strMeal}" />`;
+  let imgSrc = `<img src="${meal.strMealThumb}" alt="${meal.strMeal}" title="${meal.strMeal}" class="rounded-3 img-fluid"/>`;
   if ( type === 'r') { $('#randomMealImg').html(imgSrc); }
 }
 
