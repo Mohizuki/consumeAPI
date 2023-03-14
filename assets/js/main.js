@@ -140,12 +140,6 @@
 
 
 
-
-
-
-
-
-
 // Consume API
 $(document).ready(function(){
   // Uses the fetch() API to request category recipes from TheMealsDB.com API
@@ -164,11 +158,6 @@ $(document).ready(function(){
                   </div>
                 </a>
               </div>`;
-              // `
-              // <li class="navbar-item">
-              // <a onclick="fetchCategoryMeal('${meal.strCategory}')"
-              //     class="navbar-link-category" tabindex="0" href="#mealCardsSection">${meal.strCategory}</a>
-              // </li>`;
               NavBarCategory.innerHTML += listCategory;
       });
   })
@@ -177,16 +166,12 @@ $(document).ready(function(){
   $('.btnRandomRecipe').on('click', function(){
       fetchMeal('r');
 
-      // Textual updates
       $('#dynamicTitle').text('The Random Recipe');
   });
 
-  // Fetch searched recipe
   $('.btnSearchRecipe').on('click', function(){
       fetchMeal('u');
   })
-
-  //also this could be easily refactored, maybe open issue for this too
 
   // Fetch content after 3s
   setTimeout(getData(['u', 'r']), 1000);
@@ -326,80 +311,96 @@ function fetchCategoryMeal(category){
 }
 
 // Function to generate the random meal UI component
+
 const createMeal = (meal,type) => {
   // Set meal thumbnail
   setMealThumbnail(meal,type);
 
-  let mealMetadata = '', mealInstr = '';
+  let mealMetadata = '';
+ 
+    mealMetadata = `
+    <h1 class="text-center">"${meal.strMeal}"</h1>
+    <div class="tagslist row d-inline">
+        <ul class="d-flex justify-content-center">`
+        if (meal.strTags == null){
+          mealMetadata += `<li class="d-inline me-2 listtag">No tag</li>`
+        }
 
-  // Fill meal name 
-  if ( meal.strMeal ) { 
-      mealMetadata = `<span>Name:</span> ${meal.strMeal} <br/>`
-  }
+        else if ( meal.strTags ) {
+          (meal.strTags).split(',').forEach((element)=>{
+            mealMetadata += `<li class="d-inline me-2 listtag">${element}</li>`
+          });
+        }
+        `</ul>
+    </div>
+    `
 
-  // Fill Area 
-  if ( meal.strArea ) {
-      mealMetadata += `<span>Area:</span> ${meal.strArea} <br/>`
-  }
+  let jsisian = '';
 
-  // Fill category 
-  if ( meal.strCategory ) {
-      mealMetadata += `<span>Category:</span> ${meal.strCategory} <br/>`
-  }
-
-  // Format tags with comma-whitespace separator
-  if ( meal.strTags ) {
-      mealMetadata += `<span>Tags:</span> ${meal.strTags.split(',').join(', ')} <br/>`
-  }
-
-  // Set YouTube link
-  if ( meal.strYoutube ) {
-      mealMetadata +=`<span>YouTube:</span> <a href='${meal.strYoutube}' target="_blank" title="Watch how to cook ${meal.strMeal}">${meal.strYoutube}</a><br/>`
-  }
-
-   // Set Source link
-   if ( meal.strSource ) {
-      mealMetadata +=`<span>Source:</span> <a href='${meal.strSource}' target="_blank" title="Watch how to cook ${meal.strMeal}">${meal.strSource}</a><br/>`
-  }
-
+  jsisian =`
+  <span><b>Area</b>: "<p>${meal.strArea}</p>"</span>
+  <span><b>Category</b>: "<p>${meal.strCategory}</p>"</span>
+  `
+ 
+  // if ( meal.strCategory ) {
+  //     mealMetadata += `<span>Category:</span> ${meal.strCategory} <br/>`
+  // }
+  
   // Fill ingredients
   let ingredients = [];
   setIngredients(meal, ingredients);
   if ( ingredients.length > 0 ) {
-      mealMetadata +=`<span>Ingredients:</span> <br/> <ul>${ingredients.join('')}</ul>`
+      jsisian +=`<span><b>Ingredients:</b><br/> <ul></span>${ingredients.join('')}</ul>`
   }
 
   // Set instructions
   if ( meal.strInstructions ) {
-      mealInstr =`<span>Instructions:</span> <br/> ${meal.strInstructions}`
+      jsisian +=`<span><b>Instructions:</b></span> <br/> ${meal.strInstructions}`
   }
+
+  //   // Set YouTube link
+  //   if ( meal.strYoutube ) {
+  //     jsisian +=`<span>YouTube:</span> <a href='${meal.strYoutube}' target="_blank" title="Watch how to cook ${meal.strMeal}">${meal.strYoutube}</a><br/>`
+  // }
+
+  //  // Set Source link
+  //  if ( meal.strSource ) {
+  //     jsisian +=`<span>Source:</span> <a href='${meal.strSource}' target="_blank" title="Watch how to cook ${meal.strMeal}">${meal.strSource}</a><br/>`
+  // }
+
+  let tomboldetail = '';
+
+  tomboldetail =`
+  <a href="${meal.strYoutube}"><i class="bi bi-youtube"><h1>Youtube</h1></i></a>
+  <a href="${meal.strSource}"><i class="bi bi-globe2"><h1>Source</h1></i></a> 
+  `
   
   if ( type === 'r') { 
       $('#randomMealMetadata').html(mealMetadata); 
-      $('#randomMealInstructions').html(mealInstr); 
+      $('#isian').html(jsisian);
+      $('#tombollink').html(tomboldetail);
+      // $('#idintruksi').html(mealInstr);
+      // $('#randomMealInstructions').html(mealInstr); 
   }
 }
 
-// Sets random meal's thumbnail image
 const setMealThumbnail = (meal,type) => {
-  let imgSrc = `<img src="${meal.strMealThumb}" alt="${meal.strMeal}" title="${meal.strMeal}" class="rounded-3 img-fluid"/>`;
+  let imgSrc = `<img src="${meal.strMealThumb}" alt="${meal.strMeal}" title="${meal.strMeal}" class="img-fluid rounded"/>`;
   if ( type === 'r') { $('#randomMealImg').html(imgSrc); }
 }
 
-// Gets ingredients of the random meal
 const setIngredients = (meal,ingredients) => {   
-  // API returns max. 20 ingredients
   for(let i = 1; i <= 20; i++){
       if(meal[`strIngredient${i}`]){
           ingredients.push(
               `<li>${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}</li>`
           );
-      } else { break; }
-      if ( i % 2 === 0 ) { ingredients.push('<br/>'); }
+      } 
+      // else { break; }
+      // if ( i % 2 === 0 ) { ingredients.push('<br/>'); }
   }
 }
 
-// Creates meal cards based on search form
 const createMealCards = meals => {
   let mealCards = '';
 
@@ -414,16 +415,6 @@ const createMealCards = meals => {
               <button class="button mealCardRecipeBtn" data-meal='${mealData}'>Recipe</button>
               </div>
       </div>`;
-      // `
-      //         <div class="col-lg-4 col-md-6 mt-5 catcat shadow-sm">
-      //           <a href="#" class="barcat" onclick="fetchCategoryMeal('${meal.strCategory}')" href="#mealCardsSection">
-      //             <div class="icon-box row justify-content-center mx-2">
-      //               <h3 class="judulcat text-center">"${meal.strCategory}"</h3>
-      //               <img src="${meal.strCategoryThumb}" alt="" class="tumbcat w-auto">
-      //               <p class="description mt-4 limittext">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp${meal.strCategoryDescription}</p>
-      //             </div>
-      //           </a>
-      //         </div>`;
   });
   $('.mealCards').html(mealCards);
   $('#mealCardsSection .container').show();

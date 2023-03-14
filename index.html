@@ -33,7 +33,7 @@
       </nav>
 
     </div>
-  </header><!-- End Header -->
+  </header>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -62,7 +62,7 @@
       </div>
     </div>
 
-  </section><!-- End Hero -->
+  </section>
   <section id="category" class="d-flex">
     <div class="container">
       <div class="row" id="NavBarCategory">
@@ -71,38 +71,6 @@
     </div>
   </section>
   <main id="main">
-    <!-- ======= Featured Services Section ======= -->
-    <!-- <section id="featured-services" class="featured-services">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-laptop"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-card-checklist"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-clipboard-data"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Featured Services Section -->
-    
     <section id="mealCardsSection">
       <br/>
       <div class="container" style="display:none;">
@@ -126,7 +94,7 @@
           <div class="row mealCards d-flex"><div class="loader"></div></div>
       </div>
     </section>
-    <section id="random">
+    <!-- <section id="random">
       <br/>
       <div class="container">
         <div class="row">
@@ -148,12 +116,49 @@
           <div class="mealInstructions" id="randomMealInstructions"></div>
         </div>
       </div>
+    </section> -->
+    <section id="random" class="d-flex align-items-center" style="background-color: #f5fff4;">
+      <div class="container">
+        <div class="row">
+          <div class="order-1 d-flex flex-column mealMetadata" id="randomMealMetadata">
+            <!-- <h1 class="text-center">"Beef and Mustard Pie"</h1>
+              <div class="tagslist row d-inline">
+                <ul class="d-flex justify-content-center">
+                  <li class="d-inline me-2 listtag"> Meat</li>
+                  <li class="d-inline me-2 listtag"> Pie</li>
+                </ul>
+              </div> -->
+          </div>
+          <div class="col-lg-6 pt-5 pt-lg-0 order-3 order-lg-1 d-flex flex-column" id="isian">
+            <!-- <span><b>Area</b>: "<p>Japanese</p>"</span>
+            <span><b>Category</b>: "<p>Chicken</p>"</span>
+            <span><b>Ingredients</b>:</span> <br/> 
+            <ul>
+              <li>Ayam</li>
+              <li>Ayam</li>
+              <li>Ayam</li>
+            </ul>
+            <span><b>Intruction</b>:<br> aaaaaaaaaaaaaa</span> -->
+          </div>
+          <div class="col-lg-6 order-2 order-lg-2">
+            <div class="mealImg hero-img" id="randomMealImg"><div class="loader"></div></div>
+            <!-- <a href="https://www.youtube.com/watch?v=nMyBC9staMU"><img src="https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg" class="img-fluid rounded" alt="" id="randomMealImg"></a> -->
+            <div class="sourcecon d-flex justify-content-center" id="tombollink">
+              <!-- <a href="https://www.bbc.co.uk/food/recipes/beef_and_mustard_pie_58002"><i class="bi bi-youtube"><h1>Youtube</h1></i></a>
+              <a href="#"><i class="bi bi-globe2"><h1>Source</h1></i></a> -->
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          <br/>
+          <a class="button scrollto searchagain" href="#hero" style="margin-right:10px">Search again ?</a>
+          <button id="dynamicButton" class="button btnRandomRecipe searchagain" title="Show another random recipe">Randomize ?</button>
+        </div> 
+      </div>
     </section>
-
 
     <section id="about" class="about">
       <div class="container">
-
         <div class="row">
           <div class="col-lg-5 d-flex justify-content-center">
             <img src="assets/img/chef.png" class="img-fluid w-50 h-auto" alt="">
@@ -176,13 +181,10 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section>
 
-  <!-- ======= Footer ======= -->
   <footer id="footer">
-
     <div class="footer-top">
-
       <div class="container">
 
         <div class="row  justify-content-center">
@@ -214,13 +216,12 @@
         &copy; Copyright <strong><span>Cooking Mama</span></strong>. All Rights Reserved
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
   <!-- Vendor JS Files -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <!-- <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> -->
+  <!-- <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> gajadi dipake-->
 
-  <!-- Template Main JS File -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
 

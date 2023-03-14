@@ -39,6 +39,7 @@ h6 {
   --color-1:#F43105;
   --color-2:#241302;
   --color-3:#7aac17;
+  --color-4:#fefffa;
 }
 
 /*--------------------------------------------------------------
@@ -528,56 +529,6 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Featured Services
---------------------------------------------------------------*/
-/* .featured-services {
-  padding: 0;
-}
-
-.featured-services .icon-box {
-  padding: 20px;
-  color: #5f687b;
-  background: #f9f9fa;
-  border-radius: 4px;
-  border: 1px solid #f9f9fa;
-  transition: 0.3s;
-  height: 100%;
-}
-
-.featured-services .icon {
-  margin: 0 0 15px 0;
-}
-
-.featured-services .icon i {
-  color: #16df7e;
-  font-size: 36px;
-}
-
-.featured-services .title {
-  font-weight: 600;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.featured-services .title a {
-  color: #5f687b;
-  transition: 0.3s;
-}
-
-.featured-services .icon-box:hover {
-  border-color: #eaecef;
-}
-
-.featured-services .icon-box:hover .title a {
-  color: #16df7e;
-}
-
-.featured-services .description {
-  line-height: 24px;
-  font-size: 14px;
-} */
-
-/*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
 .about .content h3 {
@@ -857,7 +808,7 @@ section {
 .searchagain,
 .searchagain:focus {
   padding: 10px 25px;
-  border-radius: 4px;
+  border-radius: 30px;
   line-height: 1;
   color: #fff;
   font-size: 16px;
@@ -866,11 +817,48 @@ section {
   background-color: var(--color-3);
   height: 100%;
   max-height: 44px;
+  transition: 0.5s;
 }
 
 .searchagain:hover,
 .searchagain:focus:hover {
-  background: var(--color-3);
+  background: var(--color-1);
   color: #fff;
   border-color: var(--color-3);
+}
+
+/* detailrecipe */
+.listtag {
+  background-color: var(--color-3);
+  max-width: 100%;
+  padding: 4px 20px;
+  color: white;
+  border-radius: 50px;
+  
+}
+
+#random .sourcecon{
+  column-gap: 3%;
+  margin: 3%;
+}
+#random p{
+  display: inline;
+  text-decoration: underline;
+  text-decoration-skip: edges;
+  text-decoration-color: red;
+  height: auto;
+}
+
+#random .bi{
+  background-color:var(--color-3);
+  display: inline-flex;
+  padding: 5px 20px;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+#random .bi h1{
+  margin:0 7%;
+  font-size: larger;
 }
