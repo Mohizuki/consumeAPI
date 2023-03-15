@@ -862,3 +862,10 @@ section {
   margin:0 7%;
   font-size: 15px;
 }
+@media (max-width: 992px) {
+
+  #main .centering  {
+    display: flex;
+    justify-content: center;
+  }
+}
