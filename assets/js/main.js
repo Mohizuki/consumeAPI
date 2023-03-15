@@ -237,7 +237,8 @@ function fetchMeal(type){
           } else {
               $("#errorMessageContainer").remove();
               $("#mealCardsSection .container").hide();
-              $("#mealCardsSection").prepend("<div id='errorMessageContainer' style='display:flex;'> <p id='errorMessageText'>No recipes match the search term '" + user_search_term + "'</p> <a id='errorMessageBtn' class='button' href='#hero' title='Search again' >Search again</a> </div>")
+              $("#mealCardsSection").prepend("<section id='random' class='d-flex flex-column'><h1 class='text-center'>The recipe could not be found.</h1><div class='d-flex mw-100 justify-content-center'><img src='assets/img/sticker.png' class='w-25' alt=''></div><div id='errorMessageContainer' class='d-flex flex-column align-items-center'><p id='errorMessageText'>No recipes match the search term '" + user_search_term + "'</p> <a id='errorMessageBtn' class='button searchagain' href='#hero' title='Search again' >Search again</a> </div>")
+              $("#random .container").hide();
           }   
       })
       .catch( e => console.warn(e) );
